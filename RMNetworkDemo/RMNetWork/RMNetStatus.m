@@ -32,19 +32,19 @@
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         switch (status) {
             case AFNetworkReachabilityStatusReachableViaWiFi:
-                NSLog(@"hardware wifi");
+                NSLog(@"网络状态: wifi");
                 _netWorkStatus = RMNetworkReachabilityStatusReachableViaWiFi;
                 break;
             case AFNetworkReachabilityStatusUnknown:
-                NSLog(@"hardware StatusUnknown");
+                NSLog(@"网络状态: StatusUnknown");
                 _netWorkStatus = RMNetworkReachabilityStatusUnknown;
                 break;
             case AFNetworkReachabilityStatusNotReachable:
-                NSLog(@"hardware NotReachable");
+                NSLog(@"网络状态: NotReachable");
                 _netWorkStatus = RMNetworkReachabilityStatusNotReachable;
                 break;
             case AFNetworkReachabilityStatusReachableViaWWAN:
-                NSLog(@"hardware 2g/3g/4g");
+                NSLog(@"网络状态: 2g/3g/4g");
                 _netWorkStatus = RMNetworkReachabilityStatusReachableViaWWAN;
                 break;
             default:
