@@ -22,7 +22,8 @@
     // Override point for customization after application launch.
     [[RMNetStatus sharedInstance] startRMNetworkMonitor];
     [RMBaseManagerConfig sharedInstance].baseURL = @"";
-    
+    [RMBaseManagerConfig sharedInstance].baseToken = @"0619eab0-d1d5-4d54-975e-d0cbe724a6c76c00fd02f0f9d791991b8b7eb5750e27";
+
     [TestFoo1 testFoo1:self];
     
     return YES;

@@ -226,7 +226,11 @@
     
     //token
     if ([request.config respondsToSelector:@selector(token)]) {
-        [self.sessionManager.requestSerializer setValue:@"0619eab0-d1d5-4d54-975e-d0cbe724a6c76c00fd02f0f9d791991b8b7eb5750e27" forHTTPHeaderField:@"accessToken"];
+        [self.sessionManager.requestSerializer setValue:request.config.token forHTTPHeaderField:@"accessToken"];
+    } else {
+        if ([RMBaseManagerConfig sharedInstance].baseURL != nil) {
+            [self.sessionManager.requestSerializer setValue:[RMBaseManagerConfig sharedInstance].baseURL forHTTPHeaderField:@"accessToken"];
+        }
     }
 }
 
