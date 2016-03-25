@@ -10,7 +10,7 @@
 
 @interface RMBaseManagerConfig : NSObject
 @property (nonatomic, strong, nonnull) NSString *baseURL;
-@property (nonatomic, strong, nonnull) NSString *baseToken;
+@property (nonatomic, strong, nonnull) NSDictionary *baseTokenKeyAndValue;
 
 + (RMBaseManagerConfig * __nonnull)sharedInstance;
 @end

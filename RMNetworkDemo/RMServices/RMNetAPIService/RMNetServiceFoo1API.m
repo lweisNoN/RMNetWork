@@ -32,6 +32,11 @@
     return @"https://www.baidu.com";
 }
 
+- (NSDictionary *)tokenKeyAndValue
+{
+    return @{@"accessToken":@"0619eab0-d1d5-4d54-975e-d0cbe724a6c76c00fd02f0f9d791991b8b7eb5750e27"};
+}
+
 - (RMRequestMethod)requestMethod
 {
     return RMRequestMethodPost;
