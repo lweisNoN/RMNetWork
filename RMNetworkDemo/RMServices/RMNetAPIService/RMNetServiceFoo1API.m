@@ -9,9 +9,17 @@
 #import "RMNetServiceFoo1API.h"
 
 @implementation RMNetServiceFoo1API
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.config = self;
+    }
+    return self;
+}
+
 - (NSString *)requestURL
 {
-    return @"foo1/test";
+    return @"";
 }
 
 - (BOOL) isHTTPS
@@ -19,9 +27,9 @@
     return YES;
 }
 
-- (NSString *)baseURL
+- (NSString *)baseURL1
 {
-    return @"API/2.0/";
+    return @"http://www.baidu.com";
 }
 
 - (NSString *)token

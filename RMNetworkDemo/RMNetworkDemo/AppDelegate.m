@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "RMNetServiceFactory.h"
+#import "RMNetStatus.h"
 
-@interface AppDelegate ()
-
+@interface AppDelegate () <RMRequestDelegate>
 @end
 
 @implementation AppDelegate
@@ -17,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[RMNetStatus sharedInstance] startRMNetworkMonitor];
+    RMBaseRequest*request = [[RMNetServiceFactory sharedInstance] newServiceWithIdentifier:@"RMNetServiceFoo1API"];
+    request.requestDelegate = self;
+    [request start];
     return YES;
 }
 
@@ -40,6 +45,16 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)requestDidSuccess:(RMBaseRequest *)request
+{
+    NSLog(@"%@",request.responseObject);
+}
+
+- (void)requestDidFailure:(RMBaseRequest *)request
+{
+    NSLog(@"%@",request.responseObject);
 }
 
 @end

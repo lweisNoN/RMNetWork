@@ -9,7 +9,7 @@
 #import "RMRequestManager.h"
 #import "RMNetStatus.h"
 
-#define DEF_TimeoutInterval 20
+#define DEF_TimeoutInterval 60
 #define DEF_MaxConcurrentRequestCount 5
 
 
@@ -46,6 +46,10 @@
 
 - (void)addRMRequest:(RMBaseRequest *)rmBaseRequest
 {
+    [rmBaseRequest.config baseURL];
+    NSLog(@"%@",rmBaseRequest.config.baseURL);
+    id xxx = rmBaseRequest;
+    
     //check offline
     if([RMNetStatus sharedInstance].offline)
     {
@@ -58,6 +62,12 @@
     
     //check parameters json
     id params = rmBaseRequest.config.parameters;
+    
+    /**
+     TODO List
+     序列化json
+     */
+    
     if (rmBaseRequest.config.requestSerializerType == RMRequestSerializerTypeJSON) {
         if (![NSJSONSerialization isValidJSONObject:params] && params) {
             NSError *error = [NSError errorWithDomain:@"params can not be converted to JSON data" code:600 userInfo:nil];

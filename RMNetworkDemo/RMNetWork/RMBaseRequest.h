@@ -94,7 +94,7 @@ typedef NS_ENUM(NSInteger, RMResponseSerializerType) {
  */
 
 @interface RMBaseRequest : NSObject
-@property (nonatomic, weak, nullable) NSObject<RMAPIConfig> *config; //里面会调用到NSObject的方法，所以这里不用id
+@property (nonatomic, weak, nullable) id <RMAPIConfig> config;
 @property (nonatomic, weak, nullable) id <RMRequestDelegate> requestDelegate;
 @property (nonatomic, strong, nonnull) NSURLSessionDataTask *task;
 @property (nonatomic, strong, nonnull) id responseObject;
