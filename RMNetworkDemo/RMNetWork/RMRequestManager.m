@@ -152,6 +152,12 @@
 }
 
 - (NSString *)generateURLWithRequest:(RMBaseRequest *)request {
+    
+    /**
+     TODO List
+     校验请求格式
+     */
+    
     if ([request.config.baseURL hasPrefix:@"http"]) {
         return [NSString stringWithFormat:@"%@%@", request.config.baseURL, request.config.requestURL];
     } else {
