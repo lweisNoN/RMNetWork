@@ -9,6 +9,9 @@
 #import "RMRequestManager.h"
 #import "RMNetStatus.h"
 
+#define DEF_TimeoutInterval 20
+
+
 @interface RMRequestManager ()
 @property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 @property (nonatomic, strong) NSMutableDictionary *requestQueue;
@@ -32,7 +35,7 @@
 
 - (void)addRMRequest:(RMBaseRequest *)rmBaseRequest
 {
-    //check
+    //check offline
     if([RMNetStatus sharedInstance].offline)
     {
         NSError *error = [NSError errorWithDomain:@"network un work" code:600 userInfo:nil];
@@ -42,6 +45,7 @@
         return;
     }
     
+    //check parameters json
     id params = rmBaseRequest.config.parameters;
     if (rmBaseRequest.config.requestSerializerType == RMRequestSerializerTypeJSON) {
         if (![NSJSONSerialization isValidJSONObject:params] && params) {
@@ -150,7 +154,7 @@
     if ([request.config.baseURL hasPrefix:@"http"]) {
         return [NSString stringWithFormat:@"%@%@", request.config.baseURL, request.config.requestURL];
     } else {
-        NSLog(@"未配置好请求地址 %@ requestURL: %@", request.config.baseURL, request.config.requestURL);
+        NSLog(@"error: baseURL: %@ requestURL: %@", request.config.baseURL, request.config.requestURL);
         return @"";
     }
 }
@@ -164,6 +168,7 @@
         case RMRequestSerializerTypeJSON:
             self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
         default:
+            self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
             break;
     }
     
@@ -176,11 +181,16 @@
             self.sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
             break;
         default:
+            self.sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
             break;
     }
     
     //timeout
-    self.sessionManager.requestSerializer.timeoutInterval = request.config.timeoutInterval;
+    if (request.config.timeoutInterval) {
+        self.sessionManager.requestSerializer.timeoutInterval = request.config.timeoutInterval;
+    } else {
+        self.sessionManager.requestSerializer.timeoutInterval = DEF_TimeoutInterval;
+    }
     
     //security
     self.sessionManager.securityPolicy.allowInvalidCertificates = request.config.isHTTPS;
