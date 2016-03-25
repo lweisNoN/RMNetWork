@@ -24,17 +24,12 @@
 
 - (BOOL) isHTTPS
 {
-    return YES;
+    return NO;
 }
 
 - (NSString *)baseURL
 {
     return @"http://www.baidu.com";
-}
-
-- (NSString *)token
-{
-    return @"";
 }
 
 - (RMRequestMethod)requestMethod

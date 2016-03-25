@@ -56,7 +56,7 @@
 
 - (void)requestDidFailure:(RMBaseRequest *)request
 {
-    NSLog(@"%@",request.responseObject);
+    NSLog(@"%@",request.error);
 }
 
 @end
