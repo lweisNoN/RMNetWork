@@ -8,6 +8,7 @@
 
 #import "RMRequestManager.h"
 #import "RMNetStatus.h"
+#import "RMBaseManagerConfig.h"
 
 #define DEF_TimeoutInterval 60
 #define DEF_MaxConcurrentRequestCount 5
@@ -46,10 +47,6 @@
 
 - (void)addRMRequest:(RMBaseRequest *)rmBaseRequest
 {
-    [rmBaseRequest.config baseURL];
-    NSLog(@"%@",rmBaseRequest.config.baseURL);
-    id xxx = rmBaseRequest;
-    
     //check offline
     if([RMNetStatus sharedInstance].offline)
     {
@@ -168,10 +165,12 @@
      校验请求格式
      */
     
-    if ([request.config.baseURL hasPrefix:@"http"]) {
-        return [NSString stringWithFormat:@"%@%@", request.config.baseURL, request.config.requestURL];
+    NSString *baseurl = request.config.baseURL ? request.config.baseURL : [RMBaseManagerConfig sharedInstance].baseURL;
+    
+    if ([baseurl hasPrefix:@"http"]) {
+        return [NSString stringWithFormat:@"%@%@", baseurl, request.config.requestURL];
     } else {
-        NSLog(@"error: baseURL: %@ requestURL: %@", request.config.baseURL, request.config.requestURL);
+        NSLog(@"error: baseURL: %@ requestURL: %@", baseurl, request.config.requestURL);
         return @"";
     }
 }

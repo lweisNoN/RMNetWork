@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RMNetServiceFactory.h"
 #import "RMNetStatus.h"
+#import "RMBaseManagerConfig.h"
 
 @interface AppDelegate () <RMRequestDelegate>
 @end
@@ -19,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[RMNetStatus sharedInstance] startRMNetworkMonitor];
+    [RMBaseManagerConfig sharedInstance].baseURL = @"";
     RMBaseRequest*request = [[RMNetServiceFactory sharedInstance] newServiceWithIdentifier:@"RMNetServiceFoo1API"];
     request.requestDelegate = self;
     [request start];
