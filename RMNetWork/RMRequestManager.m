@@ -9,6 +9,10 @@
 #import "RMRequestManager.h"
 #import "RMNetStatus.h"
 
+#define DEF_TimeoutInterval 20
+#define DEF_MaxConcurrentRequestCount 5
+
+
 @interface RMRequestManager ()
 @property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 @property (nonatomic, strong) NSMutableDictionary *requestQueue;
@@ -28,11 +32,21 @@
     return sharedInstance;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.sessionManager = [AFHTTPSessionManager manager];
+        self.requestQueue = [NSMutableDictionary dictionary];
+        self.maxConcurrentRequestCount = DEF_MaxConcurrentRequestCount;
+    }
+    return self;
+}
+
 #pragma mark - public methods
 
 - (void)addRMRequest:(RMBaseRequest *)rmBaseRequest
 {
-    //check
+    //check offline
     if([RMNetStatus sharedInstance].offline)
     {
         NSError *error = [NSError errorWithDomain:@"network un work" code:600 userInfo:nil];
@@ -42,6 +56,7 @@
         return;
     }
     
+    //check parameters json
     id params = rmBaseRequest.config.parameters;
     if (rmBaseRequest.config.requestSerializerType == RMRequestSerializerTypeJSON) {
         if (![NSJSONSerialization isValidJSONObject:params] && params) {
@@ -116,16 +131,6 @@
 
 #pragma mark - private methods
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.sessionManager = [AFHTTPSessionManager manager];
-        self.requestQueue = [NSMutableDictionary dictionary];
-        self.maxConcurrentRequestCount = 5;
-    }
-    return self;
-}
-
 - (void)addRequest:(RMBaseRequest *)request {
     if (request.task) {
         NSString *key = [self taskHashKey:request.task];
@@ -147,10 +152,16 @@
 }
 
 - (NSString *)generateURLWithRequest:(RMBaseRequest *)request {
+    
+    /**
+     TODO List
+     校验请求格式
+     */
+    
     if ([request.config.baseURL hasPrefix:@"http"]) {
         return [NSString stringWithFormat:@"%@%@", request.config.baseURL, request.config.requestURL];
     } else {
-        NSLog(@"未配置好请求地址 %@ requestURL: %@", request.config.baseURL, request.config.requestURL);
+        NSLog(@"error: baseURL: %@ requestURL: %@", request.config.baseURL, request.config.requestURL);
         return @"";
     }
 }
@@ -164,6 +175,7 @@
         case RMRequestSerializerTypeJSON:
             self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
         default:
+            self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
             break;
     }
     
@@ -176,11 +188,16 @@
             self.sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
             break;
         default:
+            self.sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
             break;
     }
     
     //timeout
-    self.sessionManager.requestSerializer.timeoutInterval = request.config.timeoutInterval;
+    if (request.config.timeoutInterval) {
+        self.sessionManager.requestSerializer.timeoutInterval = request.config.timeoutInterval;
+    } else {
+        self.sessionManager.requestSerializer.timeoutInterval = DEF_TimeoutInterval;
+    }
     
     //security
     self.sessionManager.securityPolicy.allowInvalidCertificates = request.config.isHTTPS;
@@ -229,7 +246,7 @@
      */
 }
 
-#pragma mark - setter
+#pragma mark - getters&etters
 
 - (void)setMaxConcurrentRequestCount:(NSInteger)maxConcurrentRequestCount {
     self.sessionManager.operationQueue.maxConcurrentOperationCount = maxConcurrentRequestCount;

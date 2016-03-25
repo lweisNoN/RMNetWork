@@ -15,7 +15,6 @@
 @end
 
 @implementation RMBaseRequest
-
 #pragma mark - public methods
 
 - (void)start
