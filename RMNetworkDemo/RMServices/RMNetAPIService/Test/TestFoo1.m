@@ -7,7 +7,14 @@
 //
 
 #import "TestFoo1.h"
+#import "RMNetServiceFactory.h"
 
 @implementation TestFoo1
++ (void)testFoo1:(id)delegate
+{
+    RMBaseRequest*request = [[RMNetServiceFactory sharedInstance] newServiceWithIdentifier:@"RMNetServiceFoo1API"];
+    request.requestDelegate = delegate;
+    [request start];
+}
 
 @end
