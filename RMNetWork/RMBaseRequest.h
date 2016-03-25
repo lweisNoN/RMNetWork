@@ -66,10 +66,10 @@ typedef NS_ENUM(NSInteger, RMResponseSerializerType) {
 - (RMResponseSerializerType) responseSerializerType;
 
 @optional
-- (nonnull NSString *)token;
+- (nonnull NSDictionary *)tokenKeyAndValue;
 - (nonnull NSString *)baseURL;
 - (nonnull id)parameters;
-- (nonnull RMAFFormDataBlock) rmAFFormDataBlock;
+- (nonnull RMAFFormDataBlock)rmAFFormDataBlock;
 - (BOOL)timeoutInterval;
 
 @end

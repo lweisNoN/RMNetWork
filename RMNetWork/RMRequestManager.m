@@ -225,8 +225,12 @@
     self.sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"text/xml", @"text/plain", @"text/json", @"text/javascript", @"image/png", @"image/jpeg", @"application/json", nil];
     
     //token
-    if ([request.config respondsToSelector:@selector(token)]) {
-        [self.sessionManager.requestSerializer setValue:@"0619eab0-d1d5-4d54-975e-d0cbe724a6c76c00fd02f0f9d791991b8b7eb5750e27" forHTTPHeaderField:@"accessToken"];
+    if ([request.config respondsToSelector:@selector(tokenKeyAndValue)]) {
+        [self.sessionManager.requestSerializer setValue:request.config.tokenKeyAndValue.allValues.firstObject forHTTPHeaderField:request.config.tokenKeyAndValue.allKeys.firstObject];
+    } else {
+        if ([RMBaseManagerConfig sharedInstance].baseURL != nil) {
+            [self.sessionManager.requestSerializer setValue:[RMBaseManagerConfig sharedInstance].baseTokenKeyAndValue.allValues.firstObject forHTTPHeaderField:[RMBaseManagerConfig sharedInstance].baseTokenKeyAndValue.allKeys.firstObject];
+        }
     }
 }
 
