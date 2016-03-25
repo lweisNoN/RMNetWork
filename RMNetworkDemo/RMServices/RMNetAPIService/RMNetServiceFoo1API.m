@@ -24,12 +24,12 @@
 
 - (BOOL) isHTTPS
 {
-    return NO;
+    return YES;
 }
 
 - (NSString *)baseURL
 {
-    return @"http://www.baidu.com";
+    return @"https://www.baidu.com";
 }
 
 - (RMRequestMethod)requestMethod
@@ -44,7 +44,7 @@
 
 - (RMResponseSerializerType)responseSerializerType
 {
-    return RMResponseSerializerTypeJSON;
+    return RMResponseSerializerTypeHTTP;
 }
 
 @end
