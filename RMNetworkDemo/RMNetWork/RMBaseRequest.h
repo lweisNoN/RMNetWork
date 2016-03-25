@@ -70,7 +70,7 @@ typedef NS_ENUM(NSInteger, RMResponseSerializerType) {
 - (nonnull NSString *)baseURL;
 - (nonnull id)parameters;
 - (nonnull RMAFFormDataBlock)rmAFFormDataBlock;
-- (BOOL)timeoutInterval;
+- (NSTimeInterval)timeoutInterval;
 
 @end
 
