@@ -8,8 +8,9 @@
 
 #import "RMRequestManager.h"
 #import "RMNetStatus.h"
+#import "RMBaseManagerConfig.h"
 
-#define DEF_TimeoutInterval 20
+#define DEF_TimeoutInterval 60
 #define DEF_MaxConcurrentRequestCount 5
 
 
@@ -46,18 +47,28 @@
 
 - (void)addRMRequest:(RMBaseRequest *)rmBaseRequest
 {
-    //check offline
-    if([RMNetStatus sharedInstance].offline)
-    {
-        NSError *error = [NSError errorWithDomain:@"network un work" code:600 userInfo:nil];
-        rmBaseRequest.error = error;
-        [self requestDidFinishWithRequest:rmBaseRequest];
-        
-        return;
-    }
+//    //check offline
+//    if([RMNetStatus sharedInstance].offline)
+//    {
+//        NSError *error = [NSError errorWithDomain:@"network un work" code:600 userInfo:nil];
+//        rmBaseRequest.error = error;
+//        [self requestDidFinishWithRequest:rmBaseRequest];
+//        
+//        return;
+//    }
     
     //check parameters json
-    id params = rmBaseRequest.config.parameters;
+    id params = nil;
+    
+    if ([rmBaseRequest.config respondsToSelector:@selector(parameters)]) {
+        params = rmBaseRequest.config.parameters;
+    }
+    
+    /**
+     TODO List
+     序列化json
+     */
+    
     if (rmBaseRequest.config.requestSerializerType == RMRequestSerializerTypeJSON) {
         if (![NSJSONSerialization isValidJSONObject:params] && params) {
             NSError *error = [NSError errorWithDomain:@"params can not be converted to JSON data" code:600 userInfo:nil];
@@ -81,7 +92,7 @@
             case RMRequestMethodGet:
             break;
             case RMRequestMethodPost:
-            if (rmBaseRequest.config.rmAFFormDataBlock) {
+            if ([rmBaseRequest.config respondsToSelector:@selector(rmAFFormDataBlock)]) {
                 task = [self.sessionManager POST:requestURL parameters:params constructingBodyWithBlock:rmBaseRequest.config.rmAFFormDataBlock progress:^(NSProgress * _Nonnull uploadProgress) {
                 } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     [self handleReponseResult:task response:responseObject error:nil];
@@ -157,11 +168,17 @@
      TODO List
      校验请求格式
      */
+    NSString *baseurl = [RMBaseManagerConfig sharedInstance].baseURL;
+
+    if ([request.config respondsToSelector:@selector(baseURL)]) {
+        baseurl = request.config.baseURL;
+    }
     
-    if ([request.config.baseURL hasPrefix:@"http"]) {
-        return [NSString stringWithFormat:@"%@%@", request.config.baseURL, request.config.requestURL];
+    
+    if ([baseurl hasPrefix:@"http"]) {
+        return [NSString stringWithFormat:@"%@%@", baseurl, request.config.requestURL];
     } else {
-        NSLog(@"error: baseURL: %@ requestURL: %@", request.config.baseURL, request.config.requestURL);
+        NSLog(@"error: baseURL: %@ requestURL: %@", baseurl, request.config.requestURL);
         return @"";
     }
 }
@@ -174,6 +191,7 @@
             break;
         case RMRequestSerializerTypeJSON:
             self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+            break;
         default:
             self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
             break;
@@ -193,7 +211,7 @@
     }
     
     //timeout
-    if (request.config.timeoutInterval) {
+    if ([request.config respondsToSelector:@selector(timeoutInterval)]) {
         self.sessionManager.requestSerializer.timeoutInterval = request.config.timeoutInterval;
     } else {
         self.sessionManager.requestSerializer.timeoutInterval = DEF_TimeoutInterval;
@@ -207,7 +225,7 @@
     self.sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"text/xml", @"text/plain", @"text/json", @"text/javascript", @"image/png", @"image/jpeg", @"application/json", nil];
     
     //token
-    if (request.config.token != nil) {
+    if ([request.config respondsToSelector:@selector(token)]) {
         [self.sessionManager.requestSerializer setValue:@"0619eab0-d1d5-4d54-975e-d0cbe724a6c76c00fd02f0f9d791991b8b7eb5750e27" forHTTPHeaderField:@"accessToken"];
     }
 }
