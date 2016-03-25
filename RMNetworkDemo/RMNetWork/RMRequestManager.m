@@ -10,6 +10,7 @@
 #import "RMNetStatus.h"
 
 #define DEF_TimeoutInterval 20
+#define DEF_MaxConcurrentRequestCount 5
 
 
 @interface RMRequestManager ()
@@ -29,6 +30,16 @@
         sharedInstance = [[RMRequestManager alloc] init];
     });
     return sharedInstance;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.sessionManager = [AFHTTPSessionManager manager];
+        self.requestQueue = [NSMutableDictionary dictionary];
+        self.maxConcurrentRequestCount = DEF_MaxConcurrentRequestCount;
+    }
+    return self;
 }
 
 #pragma mark - public methods
@@ -119,16 +130,6 @@
 }
 
 #pragma mark - private methods
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.sessionManager = [AFHTTPSessionManager manager];
-        self.requestQueue = [NSMutableDictionary dictionary];
-        self.maxConcurrentRequestCount = 5;
-    }
-    return self;
-}
 
 - (void)addRequest:(RMBaseRequest *)request {
     if (request.task) {
@@ -239,7 +240,7 @@
      */
 }
 
-#pragma mark - setter
+#pragma mark - getters&etters
 
 - (void)setMaxConcurrentRequestCount:(NSInteger)maxConcurrentRequestCount {
     self.sessionManager.operationQueue.maxConcurrentOperationCount = maxConcurrentRequestCount;
