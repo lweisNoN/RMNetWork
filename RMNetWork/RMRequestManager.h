@@ -10,13 +10,8 @@
 #import "RMBaseRequest.h"
 
 @interface RMRequestManager : NSObject
-@property (nonatomic) NSUInteger maxConcurrentRequestCount;
-
 + (instancetype)sharedInstance;
 - (void)addRMRequest:(RMBaseRequest *)rmBaseRequest;
-- (void)suspendRMRequest:(RMBaseRequest *)rmBaseRequest;
-- (void)resumeRMRequest:(RMBaseRequest *)rmBaseRequest;
-- (NSURLSessionTaskState)stateOfRMRequest:(RMBaseRequest *)rmBaseRequest;
 - (void)removeRMRequest:(RMBaseRequest *)rmBaseRequest;
 - (void)removeAllRequests;
 

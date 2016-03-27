@@ -38,7 +38,7 @@
     if (self) {
         self.sessionManager = [AFHTTPSessionManager manager];
         self.requestQueue = [NSMutableDictionary dictionary];
-        self.sessionManager.operationQueue.maxConcurrentOperationCount = DEF_MaxConcurrentRequestCount;
+        self.maxConcurrentRequestCount = DEF_MaxConcurrentRequestCount;
     }
     return self;
 }
@@ -47,6 +47,16 @@
 
 - (void)addRMRequest:(RMBaseRequest *)rmBaseRequest
 {
+//    //check offline
+//    if([RMNetStatus sharedInstance].offline)
+//    {
+//        NSError *error = [NSError errorWithDomain:@"network un work" code:600 userInfo:nil];
+//        rmBaseRequest.error = error;
+//        [self requestDidFinishWithRequest:rmBaseRequest];
+//        
+//        return;
+//    }
+    
     //check parameters json
     id params = nil;
     
@@ -61,7 +71,7 @@
     
     if (rmBaseRequest.config.requestSerializerType == RMRequestSerializerTypeJSON) {
         if (![NSJSONSerialization isValidJSONObject:params] && params) {
-            NSError *error = [NSError errorWithDomain:@"params can not be converted to JSON data" code:RMRequestFormatError userInfo:nil];
+            NSError *error = [NSError errorWithDomain:@"params can not be converted to JSON data" code:600 userInfo:nil];
             rmBaseRequest.error = error;
             [self requestDidFinishWithRequest:rmBaseRequest];
             
@@ -79,18 +89,9 @@
     RMRequestMethod requestMethod = rmBaseRequest.config.requestMethod;
     NSURLSessionDataTask *task = nil;
     switch (requestMethod) {
-        case RMRequestMethodGet:
-        {
-            task = [self.sessionManager GET:requestURL parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [self handleReponseResult:task response:responseObject error:nil];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [self handleReponseResult:task response:nil error:error];
-            }];
+            case RMRequestMethodGet:
             break;
-        }
-        case RMRequestMethodPost:
-        {
+            case RMRequestMethodPost:
             if ([rmBaseRequest.config respondsToSelector:@selector(rmAFFormDataBlock)]) {
                 task = [self.sessionManager POST:requestURL parameters:params constructingBodyWithBlock:rmBaseRequest.config.rmAFFormDataBlock progress:^(NSProgress * _Nonnull uploadProgress) {
                 } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -105,55 +106,19 @@
                     [self handleReponseResult:task response:nil error:error];
                 }];
             }
+
+            break;
+            case RMRequestMethodPut:
+            break;
+            case RMRequestMethodHead:
+            break;
+            case RMRequestMethodPatch:
+            break;
+            case RMRequestMethodDelete:
+            break;
             
+            default:
             break;
-        }
-        case RMRequestMethodPut:
-        {
-            task = [self.sessionManager PUT:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [self handleReponseResult:task response:responseObject error:nil];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [self handleReponseResult:task response:nil error:error];
-            }];
-            
-            break;
-        }
-        case RMRequestMethodHead:
-        {
-            task = [self.sessionManager HEAD:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task) {
-                [self handleReponseResult:task response:nil error:nil];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [self handleReponseResult:task response:nil error:error];
-            }];
-            
-            break;
-        }
-        case RMRequestMethodPatch:
-        {
-            task = [self.sessionManager PATCH:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [self handleReponseResult:task response:nil error:nil];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [self handleReponseResult:task response:nil error:error];
-            }];
-            
-            break;
-        }
-        case RMRequestMethodDelete:
-        {
-            task = [self.sessionManager DELETE:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [self handleReponseResult:task response:nil error:nil];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [self handleReponseResult:task response:nil error:error];
-            }];
-            break;
-        }
-        default:
-        {
-            NSError *error = [NSError errorWithDomain:@"request method error, can not find this request method" code:RMRequestMethodError userInfo:nil];
-            rmBaseRequest.error = error;
-            [self requestDidFinishWithRequest:rmBaseRequest];
-            return;
-        }
     }
     
     //fork
@@ -161,25 +126,10 @@
     [self addRequest:rmBaseRequest];
 }
 
-- (void)suspendRMRequest:(RMBaseRequest *)rmBaseRequest
-{
-    [rmBaseRequest.task suspend];
-}
-
-- (void)resumeRMRequest:(RMBaseRequest *)rmBaseRequest
-{
-    [rmBaseRequest.task resume];
-}
-
 - (void)removeRMRequest:(RMBaseRequest *)rmBaseRequest
 {
     [rmBaseRequest.task cancel];
     [self removeRequest:rmBaseRequest.task];
-}
-
-- (NSURLSessionTaskState)stateOfRMRequest:(RMBaseRequest *)rmBaseRequest
-{
-    return [rmBaseRequest.task state];
 }
 
 - (void)removeAllRequests
@@ -319,8 +269,8 @@
 }
 
 #pragma mark - getters&etters
-- (void)setMaxConcurrentRequestCount:(NSUInteger)maxConcurrentRequestCount
-{
+
+- (void)setMaxConcurrentRequestCount:(NSInteger)maxConcurrentRequestCount {
     self.sessionManager.operationQueue.maxConcurrentOperationCount = maxConcurrentRequestCount;
 }
 

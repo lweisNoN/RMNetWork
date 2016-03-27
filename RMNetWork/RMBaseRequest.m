@@ -28,19 +28,4 @@
 
 }
 
-- (void)resume
-{
-    [[RMRequestManager sharedInstance] resumeRMRequest:self];
-}
-
-- (void)suspend
-{
-    [[RMRequestManager sharedInstance] suspendRMRequest:self];
-}
-
-- (void)stateOfRMRequest
-{
-    [[RMRequestManager sharedInstance] stateOfRMRequest:self];
-}
-
 @end
