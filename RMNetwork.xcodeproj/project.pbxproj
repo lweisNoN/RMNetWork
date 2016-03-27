@@ -59,7 +59,7 @@
 		153D057B1CA3C33200548C48 /* TestFoo1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFoo1.m; sourceTree = "<group>"; };
 		153D057D1CA3CF1300548C48 /* RMRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMRequestManager.h; sourceTree = "<group>"; };
 		153D057E1CA3CF1300548C48 /* RMRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMRequestManager.m; sourceTree = "<group>"; };
-		15BB36731CA387AC0024836B /* RMNetworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMNetworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15BB36731CA387AC0024836B /* RMNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BB36771CA387AC0024836B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		15BB36791CA387AC0024836B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		15BB367A1CA387AC0024836B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,10 +69,10 @@
 		15BB36821CA387AD0024836B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15BB36851CA387AD0024836B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15BB36871CA387AD0024836B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15BB368C1CA387AD0024836B /* RMNetworkDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RMNetworkDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15BB368C1CA387AD0024836B /* RMNetwork.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RMNetwork.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BB36901CA387AD0024836B /* RMNetworkDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMNetworkDemoTests.m; sourceTree = "<group>"; };
 		15BB36921CA387AD0024836B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15BB36971CA387AD0024836B /* RMNetworkDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RMNetworkDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15BB36971CA387AD0024836B /* RMNetwork.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RMNetwork.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BB369B1CA387AD0024836B /* RMNetworkDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMNetworkDemoUITests.m; sourceTree = "<group>"; };
 		15BB369D1CA387AD0024836B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15BB36AA1CA3881B0024836B /* RMBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBaseRequest.h; sourceTree = "<group>"; };
@@ -143,9 +143,9 @@
 		15BB36741CA387AC0024836B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				15BB36731CA387AC0024836B /* RMNetworkDemo.app */,
-				15BB368C1CA387AD0024836B /* RMNetworkDemoTests.xctest */,
-				15BB36971CA387AD0024836B /* RMNetworkDemoUITests.xctest */,
+				15BB36731CA387AC0024836B /* RMNetwork.app */,
+				15BB368C1CA387AD0024836B /* RMNetwork.xctest */,
+				15BB36971CA387AD0024836B /* RMNetwork.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,9 +250,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		15BB36721CA387AC0024836B /* RMNetworkDemo */ = {
+		15BB36721CA387AC0024836B /* RMNetwork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15BB36A01CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkDemo" */;
+			buildConfigurationList = 15BB36A01CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetwork" */;
 			buildPhases = (
 				804C6C7B2286552EDF4C410E /* Check Pods Manifest.lock */,
 				15BB366F1CA387AC0024836B /* Sources */,
@@ -265,14 +265,14 @@
 			);
 			dependencies = (
 			);
-			name = RMNetworkDemo;
+			name = RMNetwork;
 			productName = RMNetworkDemo;
-			productReference = 15BB36731CA387AC0024836B /* RMNetworkDemo.app */;
+			productReference = 15BB36731CA387AC0024836B /* RMNetwork.app */;
 			productType = "com.apple.product-type.application";
 		};
-		15BB368B1CA387AD0024836B /* RMNetworkDemoTests */ = {
+		15BB368B1CA387AD0024836B /* RMNetworkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15BB36A31CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkDemoTests" */;
+			buildConfigurationList = 15BB36A31CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkTests" */;
 			buildPhases = (
 				15BB36881CA387AD0024836B /* Sources */,
 				15BB36891CA387AD0024836B /* Frameworks */,
@@ -283,14 +283,14 @@
 			dependencies = (
 				15BB368E1CA387AD0024836B /* PBXTargetDependency */,
 			);
-			name = RMNetworkDemoTests;
+			name = RMNetworkTests;
 			productName = RMNetworkDemoTests;
-			productReference = 15BB368C1CA387AD0024836B /* RMNetworkDemoTests.xctest */;
+			productReference = 15BB368C1CA387AD0024836B /* RMNetwork.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		15BB36961CA387AD0024836B /* RMNetworkDemoUITests */ = {
+		15BB36961CA387AD0024836B /* RMNetworkUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15BB36A61CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkDemoUITests" */;
+			buildConfigurationList = 15BB36A61CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkUITests" */;
 			buildPhases = (
 				15BB36931CA387AD0024836B /* Sources */,
 				15BB36941CA387AD0024836B /* Frameworks */,
@@ -301,9 +301,9 @@
 			dependencies = (
 				15BB36991CA387AD0024836B /* PBXTargetDependency */,
 			);
-			name = RMNetworkDemoUITests;
+			name = RMNetworkUITests;
 			productName = RMNetworkDemoUITests;
-			productReference = 15BB36971CA387AD0024836B /* RMNetworkDemoUITests.xctest */;
+			productReference = 15BB36971CA387AD0024836B /* RMNetwork.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -328,7 +328,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 15BB366E1CA387AC0024836B /* Build configuration list for PBXProject "RMNetworkDemo" */;
+			buildConfigurationList = 15BB366E1CA387AC0024836B /* Build configuration list for PBXProject "RMNetwork" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -341,9 +341,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				15BB36721CA387AC0024836B /* RMNetworkDemo */,
-				15BB368B1CA387AD0024836B /* RMNetworkDemoTests */,
-				15BB36961CA387AD0024836B /* RMNetworkDemoUITests */,
+				15BB36721CA387AC0024836B /* RMNetwork */,
+				15BB368B1CA387AD0024836B /* RMNetworkTests */,
+				15BB36961CA387AD0024836B /* RMNetworkUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -464,12 +464,12 @@
 /* Begin PBXTargetDependency section */
 		15BB368E1CA387AD0024836B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 15BB36721CA387AC0024836B /* RMNetworkDemo */;
+			target = 15BB36721CA387AC0024836B /* RMNetwork */;
 			targetProxy = 15BB368D1CA387AD0024836B /* PBXContainerItemProxy */;
 		};
 		15BB36991CA387AD0024836B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 15BB36721CA387AC0024836B /* RMNetworkDemo */;
+			target = 15BB36721CA387AC0024836B /* RMNetwork */;
 			targetProxy = 15BB36981CA387AD0024836B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -586,7 +586,7 @@
 				INFOPLIST_FILE = RMNetworkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luhai.RMNetworkDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RMNetwork;
 			};
 			name = Debug;
 		};
@@ -598,7 +598,7 @@
 				INFOPLIST_FILE = RMNetworkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luhai.RMNetworkDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RMNetwork;
 			};
 			name = Release;
 		};
@@ -609,8 +609,8 @@
 				INFOPLIST_FILE = RMNetworkDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luhai.RMNetworkDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMNetworkDemo.app/RMNetworkDemo";
+				PRODUCT_NAME = RMNetwork;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMNetwork.app/RMNetwork";
 			};
 			name = Debug;
 		};
@@ -621,8 +621,8 @@
 				INFOPLIST_FILE = RMNetworkDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luhai.RMNetworkDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMNetworkDemo.app/RMNetworkDemo";
+				PRODUCT_NAME = RMNetwork;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMNetwork.app/RMNetwork";
 			};
 			name = Release;
 		};
@@ -632,7 +632,7 @@
 				INFOPLIST_FILE = RMNetworkDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luhai.RMNetworkDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RMNetwork;
 				TEST_TARGET_NAME = RMNetworkDemo;
 			};
 			name = Debug;
@@ -643,7 +643,7 @@
 				INFOPLIST_FILE = RMNetworkDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luhai.RMNetworkDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RMNetwork;
 				TEST_TARGET_NAME = RMNetworkDemo;
 			};
 			name = Release;
@@ -651,7 +651,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		15BB366E1CA387AC0024836B /* Build configuration list for PBXProject "RMNetworkDemo" */ = {
+		15BB366E1CA387AC0024836B /* Build configuration list for PBXProject "RMNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15BB369E1CA387AD0024836B /* Debug */,
@@ -660,7 +660,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15BB36A01CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkDemo" */ = {
+		15BB36A01CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15BB36A11CA387AD0024836B /* Debug */,
@@ -669,7 +669,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15BB36A31CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkDemoTests" */ = {
+		15BB36A31CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15BB36A41CA387AD0024836B /* Debug */,
@@ -678,7 +678,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15BB36A61CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkDemoUITests" */ = {
+		15BB36A61CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15BB36A71CA387AD0024836B /* Debug */,
