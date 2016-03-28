@@ -53,7 +53,10 @@
 
 - (void)requestDidSuccess:(RMBaseRequest *)request
 {
-    NSLog(@"%@",request.responseObject);
+    if ([request isKindOfClass:[RMNetServiceFoo1API class]])
+    {
+        NSLog(@"%@",request.responseObject);
+    }
 }
 
 - (void)requestDidFailure:(RMBaseRequest *)request

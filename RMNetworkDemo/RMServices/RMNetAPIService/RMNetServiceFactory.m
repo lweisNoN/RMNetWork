@@ -7,8 +7,6 @@
 //
 
 #import "RMNetServiceFactory.h"
-#import "RMNetServiceFoo1API.h"
-#import "RMNetServiceFoo2API.h"
 
 // foo
 NSString * const foo1API = @"RMNetServiceFoo1API";

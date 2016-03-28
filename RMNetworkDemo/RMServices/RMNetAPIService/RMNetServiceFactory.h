@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "RMBaseRequest.h"
+#import "RMNetServiceFoo1API.h"
+#import "RMNetServiceFoo2API.h"
 
 @interface RMNetServiceFactory : NSObject
 + (instancetype)sharedInstance;
