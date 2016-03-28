@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RMNetServiceFactory.h"
 
 @interface TestFoo1 : NSObject
 + (void)testFoo1:(id)delegate;

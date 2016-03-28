@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "RMNetServiceFactory.h"
-#import "RMNetStatus.h"
-#import "RMBaseManagerConfig.h"
+#import "RMNetWork.h"
 #import "TestFoo1.h"
 
 @interface AppDelegate () <RMRequestDelegate>

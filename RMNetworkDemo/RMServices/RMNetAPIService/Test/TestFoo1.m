@@ -7,7 +7,6 @@
 //
 
 #import "TestFoo1.h"
-#import "RMNetServiceFactory.h"
 
 @implementation TestFoo1
 + (void)testFoo1:(id)delegate

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RMBaseRequest.h"
+#import "RMNetWork.h"
 #import "RMNetServiceFoo1API.h"
 #import "RMNetServiceFoo2API.h"
 

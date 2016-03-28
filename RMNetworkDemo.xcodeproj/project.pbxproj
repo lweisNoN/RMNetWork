@@ -78,6 +78,7 @@
 		15EC26731CA8BF2000A0B2DA /* RMNetServiceFoo2API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMNetServiceFoo2API.m; sourceTree = "<group>"; };
 		15EC26751CA8BF2000A0B2DA /* TestFoo1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFoo1.h; sourceTree = "<group>"; };
 		15EC26761CA8BF2000A0B2DA /* TestFoo1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFoo1.m; sourceTree = "<group>"; };
+		15EC267B1CA8C12500A0B2DA /* RMNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetWork.h; sourceTree = "<group>"; };
 		56FFEE6587BFDB49B0EF96A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9563A2624FD1F65D472136 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E6CB1509EFEC2C43DCD5DCB5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +180,7 @@
 		15BB36A91CA387D30024836B /* RMNetWork */ = {
 			isa = PBXGroup;
 			children = (
+				15EC267B1CA8C12500A0B2DA /* RMNetWork.h */,
 				15BB36AA1CA3881B0024836B /* RMBaseRequest.h */,
 				15BB36AB1CA3881B0024836B /* RMBaseRequest.m */,
 				153D05671CA3B08700548C48 /* RMBaseManagerConfig.h */,
