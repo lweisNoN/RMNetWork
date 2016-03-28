@@ -230,6 +230,12 @@
     if ([baseurl hasPrefix:@"http"]) {
         return [NSString stringWithFormat:@"%@%@", baseurl, request.config.requestURL];
     } else {
+        if ([request.config respondsToSelector:@selector(requestURL)]) {
+            if ([request.config.requestURL hasPrefix:@"http"]) {
+                return [NSString stringWithFormat:@"%@",request.config.requestURL];
+            }
+        }
+        
         NSLog(@"error: baseURL: %@ requestURL: %@", baseurl, request.config.requestURL);
         return @"";
     }
