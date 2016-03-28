@@ -25,7 +25,7 @@
 - (void)stop
 {
     [[RMRequestManager sharedInstance] removeRMRequest:self];
-
+    self.requestDelegate = nil;
 }
 
 - (void)resume
@@ -41,6 +41,23 @@
 - (void)stateOfRMRequest
 {
     [[RMRequestManager sharedInstance] stateOfRMRequest:self];
+}
+
+- (void)startWithRequestSuccessBlock:(RMRequestCompletionBlock)success failureBlock:(RMRequestCompletionBlock)failure
+{
+    [self setRequestSuccessBlock:success failureBlock:failure];
+    [self start];
+}
+
+- (void)clearCompletionBlock {
+    self.requestSuccessBlock = nil;
+    self.requestSuccessBlock = nil;
+}
+
+#pragma mark - private methods
+- (void)setRequestSuccessBlock:(RMRequestCompletionBlock)success failureBlock:(RMRequestCompletionBlock)failure {
+    self.requestSuccessBlock = success;
+    self.requestFailureBlock = failure;
 }
 
 @end

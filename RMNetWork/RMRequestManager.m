@@ -93,6 +93,7 @@
         {
             if ([rmBaseRequest.config respondsToSelector:@selector(rmAFFormDataBlock)]) {
                 task = [self.sessionManager POST:requestURL parameters:params constructingBodyWithBlock:rmBaseRequest.config.rmAFFormDataBlock progress:^(NSProgress * _Nonnull uploadProgress) {
+                    rmBaseRequest.uploadProgress(uploadProgress);
                 } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     [self handleReponseResult:task response:responseObject error:nil];
                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -175,6 +176,7 @@
 {
     [rmBaseRequest.task cancel];
     [self removeRequest:rmBaseRequest.task];
+    [rmBaseRequest clearCompletionBlock];
 }
 
 - (NSURLSessionTaskState)stateOfRMRequest:(RMBaseRequest *)rmBaseRequest
@@ -302,20 +304,24 @@
 - (void)requestDidFinishWithRequest:(RMBaseRequest *)request {
     
     if (request.error) {
+        if (request.requestFailureBlock) {
+            request.requestFailureBlock(request);
+        }
+        
         if ([request.requestDelegate respondsToSelector:@selector(requestDidFailure:)]) {
             [request.requestDelegate requestDidFailure:request];
         }
     } else {
+        if (request.requestSuccessBlock) {
+            request.requestSuccessBlock(request);
+        }
         
         if ([request.requestDelegate respondsToSelector:@selector(requestDidSuccess:)]) {
             [request.requestDelegate requestDidSuccess:request];
         }
     }
     
-    /**
-     TODO
-     block回调数据
-     */
+    [request clearCompletionBlock];
 }
 
 #pragma mark - getters&etters

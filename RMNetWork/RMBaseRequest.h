@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 
-typedef void (^completion_handler_t)(id __nullable, NSError* __nullable);
+@class RMBaseRequest;
+
+typedef void(^RMRequestCompletionBlock)(__kindof RMBaseRequest * _Nonnull request);
 typedef void (^RMAFFormDataBlock)(id<AFMultipartFormData> __nonnull formData);
 
 #pragma mark HTTP request method
@@ -75,9 +77,7 @@ typedef NS_ENUM(NSInteger , RMErrorCode) {
 @end
 
 #pragma mark - RMRequestDelegate
-/**
- 返回数据代理
- */
+
 @class RMBaseRequest;
 @protocol RMRequestDelegate <NSObject>
 
@@ -87,16 +87,14 @@ typedef NS_ENUM(NSInteger , RMErrorCode) {
 - (void)clearRequest;
 @end
 
-#pragma mark - RMRequestBlock
-/**
- TODO List
- block回调数据
- */
-
 @interface RMBaseRequest : NSObject
 @property (nonatomic, strong, nonnull) id responseObject;
 @property (nonatomic, strong, nullable) NSError *error;
 @property (nonatomic, strong, nonnull) NSURLSessionDataTask *task;
+
+@property (nonatomic, copy, nullable) void (^uploadProgress)(NSProgress  * _Nullable progress);
+@property (nonatomic, copy, nullable) void(^requestSuccessBlock)(RMBaseRequest * _Nonnull);
+@property (nonatomic, copy, nullable) void(^requestFailureBlock)(RMBaseRequest * _Nonnull);
 
 @property (nonatomic, weak, nullable) id <RMAPIConfig> config;
 @property (nonatomic, weak, nullable) id <RMRequestDelegate> requestDelegate;
@@ -107,6 +105,10 @@ typedef NS_ENUM(NSInteger , RMErrorCode) {
 - (void)resume;
 - (void)suspend;
 - (void)stateOfRMRequest;
+
+#pragma mark - RMRequestBlock
+- (void)startWithRequestSuccessBlock:(nonnull RMRequestCompletionBlock)success failureBlock:(nonnull RMRequestCompletionBlock)failure;
+- (void)clearCompletionBlock;
 @end
 
 
