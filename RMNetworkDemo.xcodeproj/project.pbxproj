@@ -7,12 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		153D055C1CA38F6B00548C48 /* RMNetServiceFoo1API.m in Sources */ = {isa = PBXBuildFile; fileRef = 153D055B1CA38F6B00548C48 /* RMNetServiceFoo1API.m */; };
-		153D05621CA38FE800548C48 /* RMNetServiceFoo2API.m in Sources */ = {isa = PBXBuildFile; fileRef = 153D05611CA38FE800548C48 /* RMNetServiceFoo2API.m */; };
 		153D05691CA3B08700548C48 /* RMBaseManagerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 153D05681CA3B08700548C48 /* RMBaseManagerConfig.m */; };
 		153D056C1CA3B33200548C48 /* RMNetStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 153D056B1CA3B33200548C48 /* RMNetStatus.m */; };
-		153D05751CA3BBAE00548C48 /* RMNetServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 153D05741CA3BBAE00548C48 /* RMNetServiceFactory.m */; };
-		153D057C1CA3C33200548C48 /* TestFoo1.m in Sources */ = {isa = PBXBuildFile; fileRef = 153D057B1CA3C33200548C48 /* TestFoo1.m */; };
 		153D057F1CA3CF1300548C48 /* RMRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 153D057E1CA3CF1300548C48 /* RMRequestManager.m */; };
 		15BB36781CA387AC0024836B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB36771CA387AC0024836B /* main.m */; };
 		15BB367B1CA387AC0024836B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB367A1CA387AC0024836B /* AppDelegate.m */; };
@@ -24,6 +20,10 @@
 		15BB369C1CA387AD0024836B /* RMNetworkDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB369B1CA387AD0024836B /* RMNetworkDemoUITests.m */; };
 		15BB36AC1CA3881B0024836B /* RMBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB36AB1CA3881B0024836B /* RMBaseRequest.m */; };
 		15BB36B91CA38A280024836B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 15BB36B81CA38A280024836B /* Podfile */; };
+		15EC26771CA8BF2000A0B2DA /* RMNetServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EC266F1CA8BF2000A0B2DA /* RMNetServiceFactory.m */; };
+		15EC26781CA8BF2000A0B2DA /* RMNetServiceFoo1API.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EC26711CA8BF2000A0B2DA /* RMNetServiceFoo1API.m */; };
+		15EC26791CA8BF2000A0B2DA /* RMNetServiceFoo2API.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EC26731CA8BF2000A0B2DA /* RMNetServiceFoo2API.m */; };
+		15EC267A1CA8BF2000A0B2DA /* TestFoo1.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EC26761CA8BF2000A0B2DA /* TestFoo1.m */; };
 		EB230E21E2011EF99E44C34E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FFEE6587BFDB49B0EF96A9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,18 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		153D055A1CA38F6B00548C48 /* RMNetServiceFoo1API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetServiceFoo1API.h; sourceTree = "<group>"; };
-		153D055B1CA38F6B00548C48 /* RMNetServiceFoo1API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMNetServiceFoo1API.m; sourceTree = "<group>"; };
-		153D05601CA38FE800548C48 /* RMNetServiceFoo2API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetServiceFoo2API.h; sourceTree = "<group>"; };
-		153D05611CA38FE800548C48 /* RMNetServiceFoo2API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMNetServiceFoo2API.m; sourceTree = "<group>"; };
 		153D05671CA3B08700548C48 /* RMBaseManagerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBaseManagerConfig.h; sourceTree = "<group>"; };
 		153D05681CA3B08700548C48 /* RMBaseManagerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBaseManagerConfig.m; sourceTree = "<group>"; };
 		153D056A1CA3B33200548C48 /* RMNetStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetStatus.h; sourceTree = "<group>"; };
 		153D056B1CA3B33200548C48 /* RMNetStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMNetStatus.m; sourceTree = "<group>"; };
-		153D05731CA3BBAE00548C48 /* RMNetServiceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetServiceFactory.h; sourceTree = "<group>"; };
-		153D05741CA3BBAE00548C48 /* RMNetServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMNetServiceFactory.m; sourceTree = "<group>"; };
-		153D057A1CA3C33200548C48 /* TestFoo1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFoo1.h; sourceTree = "<group>"; };
-		153D057B1CA3C33200548C48 /* TestFoo1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFoo1.m; sourceTree = "<group>"; };
 		153D057D1CA3CF1300548C48 /* RMRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMRequestManager.h; sourceTree = "<group>"; };
 		153D057E1CA3CF1300548C48 /* RMRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMRequestManager.m; sourceTree = "<group>"; };
 		15BB36731CA387AC0024836B /* RMNetworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMNetworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +70,14 @@
 		15BB36AA1CA3881B0024836B /* RMBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBaseRequest.h; sourceTree = "<group>"; };
 		15BB36AB1CA3881B0024836B /* RMBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBaseRequest.m; sourceTree = "<group>"; };
 		15BB36B81CA38A280024836B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		15EC266E1CA8BF2000A0B2DA /* RMNetServiceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetServiceFactory.h; sourceTree = "<group>"; };
+		15EC266F1CA8BF2000A0B2DA /* RMNetServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMNetServiceFactory.m; sourceTree = "<group>"; };
+		15EC26701CA8BF2000A0B2DA /* RMNetServiceFoo1API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetServiceFoo1API.h; sourceTree = "<group>"; };
+		15EC26711CA8BF2000A0B2DA /* RMNetServiceFoo1API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMNetServiceFoo1API.m; sourceTree = "<group>"; };
+		15EC26721CA8BF2000A0B2DA /* RMNetServiceFoo2API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetServiceFoo2API.h; sourceTree = "<group>"; };
+		15EC26731CA8BF2000A0B2DA /* RMNetServiceFoo2API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMNetServiceFoo2API.m; sourceTree = "<group>"; };
+		15EC26751CA8BF2000A0B2DA /* TestFoo1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFoo1.h; sourceTree = "<group>"; };
+		15EC26761CA8BF2000A0B2DA /* TestFoo1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFoo1.m; sourceTree = "<group>"; };
 		56FFEE6587BFDB49B0EF96A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9563A2624FD1F65D472136 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E6CB1509EFEC2C43DCD5DCB5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,27 +109,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		153D05631CA3916400548C48 /* RMNetStatusService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RMNetStatusService;
-			sourceTree = "<group>";
-		};
-		153D05791CA3C30C00548C48 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				153D057A1CA3C33200548C48 /* TestFoo1.h */,
-				153D057B1CA3C33200548C48 /* TestFoo1.m */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		15BB366A1CA387AC0024836B = {
 			isa = PBXGroup;
 			children = (
 				15BB36B81CA38A280024836B /* Podfile */,
-				15BB36AD1CA389170024836B /* RMServices */,
 				15BB36A91CA387D30024836B /* RMNetWork */,
 				15BB36751CA387AC0024836B /* RMNetworkDemo */,
 				15BB368F1CA387AD0024836B /* RMNetworkDemoTests */,
@@ -153,6 +136,7 @@
 		15BB36751CA387AC0024836B /* RMNetworkDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15EC266C1CA8BF2000A0B2DA /* RMServices */,
 				15BB36791CA387AC0024836B /* AppDelegate.h */,
 				15BB367A1CA387AC0024836B /* AppDelegate.m */,
 				15BB367C1CA387AC0024836B /* ViewController.h */,
@@ -207,27 +191,35 @@
 			path = RMNetWork;
 			sourceTree = "<group>";
 		};
-		15BB36AD1CA389170024836B /* RMServices */ = {
+		15EC266C1CA8BF2000A0B2DA /* RMServices */ = {
 			isa = PBXGroup;
 			children = (
-				153D05631CA3916400548C48 /* RMNetStatusService */,
-				15BB36AE1CA389810024836B /* RMNetAPIService */,
+				15EC266D1CA8BF2000A0B2DA /* RMNetAPIService */,
 			);
 			path = RMServices;
 			sourceTree = "<group>";
 		};
-		15BB36AE1CA389810024836B /* RMNetAPIService */ = {
+		15EC266D1CA8BF2000A0B2DA /* RMNetAPIService */ = {
 			isa = PBXGroup;
 			children = (
-				153D05731CA3BBAE00548C48 /* RMNetServiceFactory.h */,
-				153D05741CA3BBAE00548C48 /* RMNetServiceFactory.m */,
-				153D055A1CA38F6B00548C48 /* RMNetServiceFoo1API.h */,
-				153D055B1CA38F6B00548C48 /* RMNetServiceFoo1API.m */,
-				153D05601CA38FE800548C48 /* RMNetServiceFoo2API.h */,
-				153D05611CA38FE800548C48 /* RMNetServiceFoo2API.m */,
-				153D05791CA3C30C00548C48 /* Test */,
+				15EC266E1CA8BF2000A0B2DA /* RMNetServiceFactory.h */,
+				15EC266F1CA8BF2000A0B2DA /* RMNetServiceFactory.m */,
+				15EC26701CA8BF2000A0B2DA /* RMNetServiceFoo1API.h */,
+				15EC26711CA8BF2000A0B2DA /* RMNetServiceFoo1API.m */,
+				15EC26721CA8BF2000A0B2DA /* RMNetServiceFoo2API.h */,
+				15EC26731CA8BF2000A0B2DA /* RMNetServiceFoo2API.m */,
+				15EC26741CA8BF2000A0B2DA /* Test */,
 			);
 			path = RMNetAPIService;
+			sourceTree = "<group>";
+		};
+		15EC26741CA8BF2000A0B2DA /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				15EC26751CA8BF2000A0B2DA /* TestFoo1.h */,
+				15EC26761CA8BF2000A0B2DA /* TestFoo1.m */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		824D2340F2D5DD6DD76942AF /* Frameworks */ = {
@@ -430,16 +422,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				153D05691CA3B08700548C48 /* RMBaseManagerConfig.m in Sources */,
-				153D05751CA3BBAE00548C48 /* RMNetServiceFactory.m in Sources */,
-				153D057C1CA3C33200548C48 /* TestFoo1.m in Sources */,
 				15BB367E1CA387AC0024836B /* ViewController.m in Sources */,
-				153D05621CA38FE800548C48 /* RMNetServiceFoo2API.m in Sources */,
 				15BB367B1CA387AC0024836B /* AppDelegate.m in Sources */,
-				153D055C1CA38F6B00548C48 /* RMNetServiceFoo1API.m in Sources */,
 				15BB36781CA387AC0024836B /* main.m in Sources */,
 				15BB36AC1CA3881B0024836B /* RMBaseRequest.m in Sources */,
+				15EC26781CA8BF2000A0B2DA /* RMNetServiceFoo1API.m in Sources */,
 				153D057F1CA3CF1300548C48 /* RMRequestManager.m in Sources */,
+				15EC267A1CA8BF2000A0B2DA /* TestFoo1.m in Sources */,
 				153D056C1CA3B33200548C48 /* RMNetStatus.m in Sources */,
+				15EC26771CA8BF2000A0B2DA /* RMNetServiceFactory.m in Sources */,
+				15EC26791CA8BF2000A0B2DA /* RMNetServiceFoo2API.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
