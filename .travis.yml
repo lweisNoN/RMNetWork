@@ -3,5 +3,7 @@ before_install: true
   #- brew update
   #- brew upgrade xctool
   #- gem install cocoapods
+before_script:
+  - export RMNETWORK_TEST_ENV="travis"
 script:
   - xctool -workspace RMNetworkDemo.xcworkspace -scheme RMNetworkDemo -sdk iphonesimulator7.0 ONLY_ACTIVE_ARCH=NO
