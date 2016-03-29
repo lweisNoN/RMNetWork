@@ -4,4 +4,4 @@ before_install: true
   #- brew upgrade xctool
   #- gem install cocoapods
 script:
-  - xctool -workspace RMNetworkDemo.xcworkspace -scheme RMNetworkDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool -workspace RMNetworkDemo.xcworkspace -scheme RMNetworkDemo -sdk iphonesimulator -freshInstall -freshSimulator  ONLY_ACTIVE_ARCH=NO
