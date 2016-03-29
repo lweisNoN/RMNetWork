@@ -2,8 +2,8 @@ language: objective-c
 before_install:
   - brew update
   - brew upgrade xctool
-  - gem install cocoapods
   - gem update
+  - gem install cocoapods
 before_script:
   - export RMNETWORK_TEST_ENV="travis"
 script:
