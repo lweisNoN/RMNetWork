@@ -51,3 +51,6 @@ after_failure:
 #   script: fastlane complete_framework_release --env deploy
 #   on:
 #     tags: true
+notifications:  
+  email:
+    - lh.paused@gmail.com
