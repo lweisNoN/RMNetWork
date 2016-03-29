@@ -30,6 +30,7 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [[RMRequestManager alloc] init];
     });
+    
     return sharedInstance;
 }
 

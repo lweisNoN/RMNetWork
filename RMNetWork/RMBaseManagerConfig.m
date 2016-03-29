@@ -22,6 +22,7 @@
             _instance = [[RMBaseManagerConfig alloc] init];
         }
     });
+    
     return _instance;
 }
 

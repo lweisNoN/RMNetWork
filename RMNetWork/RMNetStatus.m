@@ -21,6 +21,7 @@
             _instance = [[RMNetStatus alloc] init];
         }
     });
+    
     return _instance;
 }
 
