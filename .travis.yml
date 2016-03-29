@@ -1,8 +1,6 @@
 language: objective-c
 osx_image: xcode7.3
 before_install:
-  - brew update
-  - brew upgrade xctool
   - pod install
 before_script:
   - export RMNETWORK_TEST_ENV="travis"
