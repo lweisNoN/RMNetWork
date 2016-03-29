@@ -3,6 +3,7 @@ before_install:
   - brew update
   - brew upgrade xctool
   - gem install cocoapods
+  - gem update
 before_script:
   - export RMNETWORK_TEST_ENV="travis"
 script:
