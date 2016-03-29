@@ -1,7 +1,5 @@
 # RMNetWork
 
-//![build](https://travis-ci.org/lweisNoN/RMNetWork.svg?branch=master)
-
 ## Overview
 A Objective-C wrapper around AFNetworking 3.0
 ## Basic usage
