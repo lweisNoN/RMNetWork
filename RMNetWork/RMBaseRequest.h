@@ -107,7 +107,7 @@ typedef NS_ENUM(NSInteger , RMErrorCode) {
 - (void)stateOfRMRequest;
 
 #pragma mark - RMRequestBlock
-- (void)startWithRequestSuccessBlock:(nonnull RMRequestCompletionBlock)success failureBlock:(nonnull RMRequestCompletionBlock)failure;
+- (RMBaseRequest * _Nullable)startWithRequestSuccessBlock:(nonnull RMRequestCompletionBlock)success failureBlock:(nonnull RMRequestCompletionBlock)failure;
 - (void)clearCompletionBlock;
 @end
 

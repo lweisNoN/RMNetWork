@@ -43,10 +43,12 @@
     [[RMRequestManager sharedInstance] stateOfRMRequest:self];
 }
 
-- (void)startWithRequestSuccessBlock:(RMRequestCompletionBlock)success failureBlock:(RMRequestCompletionBlock)failure
+- (RMBaseRequest *)startWithRequestSuccessBlock:(RMRequestCompletionBlock)success failureBlock:(RMRequestCompletionBlock)failure
 {
     [self setRequestSuccessBlock:success failureBlock:failure];
     [self start];
+    
+    return self;
 }
 
 - (void)clearCompletionBlock {
