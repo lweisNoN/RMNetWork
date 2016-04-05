@@ -53,7 +53,7 @@
 
 - (void)clearCompletionBlock {
     self.requestSuccessBlock = nil;
-    self.requestSuccessBlock = nil;
+    self.requestFailureBlock = nil;
 }
 
 #pragma mark - private methods
