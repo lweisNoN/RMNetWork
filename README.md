@@ -2,6 +2,7 @@
 
 ![build](https://travis-ci.org/lweisNoN/RMNetWork.svg?branch=master)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/RMNetwork.svg)](https://img.shields.io/cocoapods/v/RMNetwork.svg)
+[![Platform](https://img.shields.io/cocoapods/p/RMNetwork.svg?style=flat)](http://cocoadocs.org/docsets/RMNetwork)
 ## Overview
 A Objective-C wrapper around AFNetworking 3.0
 ## Basic usage
