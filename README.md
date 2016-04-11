@@ -1,25 +1,27 @@
 # RMNetWork
 
 ![build](https://travis-ci.org/lweisNoN/RMNetWork.svg?branch=master)
-
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/RMNetwork.svg)](https://img.shields.io/cocoapods/v/RMNetwork.svg)
 ## Overview
 A Objective-C wrapper around AFNetworking 3.0
 ## Basic usage
-
-###1 Config baseURL & token if needed
+###1 Installation with CocoaPods
+     Source: https://github.com/lweisNoN/RMNetwork.git
+     pod 'RMNetwork', '~> 0.1.4'
+###2 Config baseURL & token if needed
      
     [RMBaseManagerConfig sharedInstance].baseURL = @"";
     [RMBaseManagerConfig sharedInstance].baseTokenKeyAndValue = @{@"accessToken":@"foo"};
     @required
 
-###2 New request
+###3 New request
 
-####2.1 Subclass of RMBaseRequest
+####3.1 Subclass of RMBaseRequest
 
     @interface RMNetServiceFoo1API : RMBaseRequest <RMAPIConfig>
     @end
 
-####2.2  New this subclass request and config request
+####3.2  New this subclass request and config request
 In implementation of the subclass add config:
     
 ####Required methods
@@ -77,7 +79,7 @@ In implementation of the subclass add config:
         return fooTimeInterval;
     }
   
-####2.3 Handle response
+####3.3 Handle response
 Implementation RMRequestDelegate or block to handle reponse
 
     <RMRequestDelegate>
@@ -91,7 +93,7 @@ Implementation RMRequestDelegate or block to handle reponse
         NSLog(@"%@",request.error);
     }
     
-####3 Start net status Monitor
+####4 Start net status Monitor
 
      [[RMNetStatus sharedInstance] startRMNetworkMonitor];
 
