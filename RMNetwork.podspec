@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RMNetwork"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "For AFNetworking 3.x."
   s.homepage     = "https://github.com/lweisNoN/RMNetWork"
 
@@ -15,7 +15,6 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/lweisNoN/RMNetwork.git", :tag => s.version.to_s }
 
-  s.public_header_files = 'RMNetWork/RMNetWork.h'
   s.source_files  = "RMNetWork/*.{h,m}"
 
   s.requires_arc = true
