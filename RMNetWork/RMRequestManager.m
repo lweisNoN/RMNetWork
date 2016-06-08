@@ -10,7 +10,7 @@
 #import "RMNetStatus.h"
 #import "RMBaseManagerConfig.h"
 
-#define DEF_TimeoutInterval 60
+#define DEF_TimeoutInterval 30
 #define DEF_MaxConcurrentRequestCount 5
 
 
