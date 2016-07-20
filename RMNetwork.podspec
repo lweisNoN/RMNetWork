@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RMNetwork"
-  s.version      = "0.1.4"
+  s.version      = "0.1.5"
   s.summary      = "For AFNetworking 3.x."
   s.homepage     = "https://github.com/lweisNoN/RMNetWork"
 
