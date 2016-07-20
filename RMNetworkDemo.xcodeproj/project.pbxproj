@@ -24,7 +24,7 @@
 		15EC26781CA8BF2000A0B2DA /* RMNetServiceFoo1API.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EC26711CA8BF2000A0B2DA /* RMNetServiceFoo1API.m */; };
 		15EC26791CA8BF2000A0B2DA /* RMNetServiceFoo2API.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EC26731CA8BF2000A0B2DA /* RMNetServiceFoo2API.m */; };
 		15EC267A1CA8BF2000A0B2DA /* TestFoo1.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EC26761CA8BF2000A0B2DA /* TestFoo1.m */; };
-		EB230E21E2011EF99E44C34E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FFEE6587BFDB49B0EF96A9 /* libPods.a */; };
+		FCD1DD6D7232E392A866E2E8 /* libPods-RMNetworkDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D2A6A63903DD70DBD18121 /* libPods-RMNetworkDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,7 @@
 		15BB369D1CA387AD0024836B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15BB36AA1CA3881B0024836B /* RMBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBaseRequest.h; sourceTree = "<group>"; };
 		15BB36AB1CA3881B0024836B /* RMBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBaseRequest.m; sourceTree = "<group>"; };
-		15BB36B81CA38A280024836B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		15BB36B81CA38A280024836B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		15EC266E1CA8BF2000A0B2DA /* RMNetServiceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetServiceFactory.h; sourceTree = "<group>"; };
 		15EC266F1CA8BF2000A0B2DA /* RMNetServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMNetServiceFactory.m; sourceTree = "<group>"; };
 		15EC26701CA8BF2000A0B2DA /* RMNetServiceFoo1API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetServiceFoo1API.h; sourceTree = "<group>"; };
@@ -79,9 +79,9 @@
 		15EC26751CA8BF2000A0B2DA /* TestFoo1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFoo1.h; sourceTree = "<group>"; };
 		15EC26761CA8BF2000A0B2DA /* TestFoo1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFoo1.m; sourceTree = "<group>"; };
 		15EC267B1CA8C12500A0B2DA /* RMNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNetWork.h; sourceTree = "<group>"; };
-		56FFEE6587BFDB49B0EF96A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C9563A2624FD1F65D472136 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E6CB1509EFEC2C43DCD5DCB5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3FBC6F816326B2B636403004 /* Pods-RMNetworkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMNetworkDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RMNetworkDemo/Pods-RMNetworkDemo.release.xcconfig"; sourceTree = "<group>"; };
+		537DD4CD84261CA146201DC5 /* Pods-RMNetworkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMNetworkDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RMNetworkDemo/Pods-RMNetworkDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		91D2A6A63903DD70DBD18121 /* libPods-RMNetworkDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RMNetworkDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB230E21E2011EF99E44C34E /* libPods.a in Frameworks */,
+				FCD1DD6D7232E392A866E2E8 /* libPods-RMNetworkDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +119,8 @@
 				15BB368F1CA387AD0024836B /* RMNetworkDemoTests */,
 				15BB369A1CA387AD0024836B /* RMNetworkDemoUITests */,
 				15BB36741CA387AC0024836B /* Products */,
-				84C47083E909011A5AA43316 /* Pods */,
-				824D2340F2D5DD6DD76942AF /* Frameworks */,
+				4A94E50E68B1075A5C1E1AC8 /* Pods */,
+				4BE8E2C963B7C1F720CAE19D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,21 +224,21 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		824D2340F2D5DD6DD76942AF /* Frameworks */ = {
+		4A94E50E68B1075A5C1E1AC8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				56FFEE6587BFDB49B0EF96A9 /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		84C47083E909011A5AA43316 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6C9563A2624FD1F65D472136 /* Pods.debug.xcconfig */,
-				E6CB1509EFEC2C43DCD5DCB5 /* Pods.release.xcconfig */,
+				537DD4CD84261CA146201DC5 /* Pods-RMNetworkDemo.debug.xcconfig */,
+				3FBC6F816326B2B636403004 /* Pods-RMNetworkDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4BE8E2C963B7C1F720CAE19D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91D2A6A63903DD70DBD18121 /* libPods-RMNetworkDemo.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,12 +248,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15BB36A01CA387AD0024836B /* Build configuration list for PBXNativeTarget "RMNetworkDemo" */;
 			buildPhases = (
-				804C6C7B2286552EDF4C410E /* Check Pods Manifest.lock */,
+				2DEF808FDC62697EDF4FBE7B /* [CP] Check Pods Manifest.lock */,
 				15BB366F1CA387AC0024836B /* Sources */,
 				15BB36701CA387AC0024836B /* Frameworks */,
 				15BB36711CA387AC0024836B /* Resources */,
-				976DDF28E85E1820D4C42703 /* Embed Pods Frameworks */,
-				23588B7C69345CE9EFCF7B72 /* Copy Pods Resources */,
+				E6D445982FFFFB4780829A09 /* [CP] Embed Pods Frameworks */,
+				FDA89E75D1164645331158CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -371,29 +371,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		23588B7C69345CE9EFCF7B72 /* Copy Pods Resources */ = {
+		2DEF808FDC62697EDF4FBE7B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		804C6C7B2286552EDF4C410E /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,19 +386,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		976DDF28E85E1820D4C42703 /* Embed Pods Frameworks */ = {
+		E6D445982FFFFB4780829A09 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RMNetworkDemo/Pods-RMNetworkDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDA89E75D1164645331158CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RMNetworkDemo/Pods-RMNetworkDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -574,9 +574,10 @@
 		};
 		15BB36A11CA387AD0024836B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C9563A2624FD1F65D472136 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 537DD4CD84261CA146201DC5 /* Pods-RMNetworkDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				INFOPLIST_FILE = RMNetworkDemo/Info.plist;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -587,9 +588,10 @@
 		};
 		15BB36A21CA387AD0024836B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6CB1509EFEC2C43DCD5DCB5 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3FBC6F816326B2B636403004 /* Pods-RMNetworkDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				INFOPLIST_FILE = RMNetworkDemo/Info.plist;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
