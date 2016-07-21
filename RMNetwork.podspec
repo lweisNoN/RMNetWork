@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
-  s.author             = { "luhai" => "13076080418@163.com" }
+  s.author             = { "luhai" => "18221536574@163.com" }
 
   s.ios.deployment_target = "8.0"
 
