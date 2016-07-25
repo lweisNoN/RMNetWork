@@ -56,8 +56,9 @@
 }
 
 - (instancetype)initWithBaseURL:(NSURL *)url {
-    return [self initWithBaseURL:url sessionConfiguration:nil];
-}
+    NSURLSessionConfiguration *configure = [NSURLSessionConfiguration defaultSessionConfiguration];
+    configure.HTTPMaximumConnectionsPerHost = 12;
+    return [self initWithBaseURL:url sessionConfiguration:configure];}
 
 - (instancetype)initWithSessionConfiguration:(NSURLSessionConfiguration *)configuration {
     return [self initWithBaseURL:nil sessionConfiguration:configuration];
