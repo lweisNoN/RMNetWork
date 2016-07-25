@@ -11,7 +11,7 @@
 #import "RMBaseManagerConfig.h"
 
 #define DEF_TimeoutInterval 30
-#define DEF_MaxConcurrentRequestCount 5
+#define DEF_MaxConcurrentRequestCount 12
 
 
 @interface RMRequestManager ()
@@ -37,9 +37,10 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.sessionManager = [AFHTTPSessionManager manager];
+        NSURLSessionConfiguration *configure = [NSURLSessionConfiguration defaultSessionConfiguration];
+        configure.HTTPMaximumConnectionsPerHost = DEF_MaxConcurrentRequestCount;
+        self.sessionManager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configure];
         self.requestQueue = [NSMutableDictionary dictionary];
-        self.sessionManager.operationQueue.maxConcurrentOperationCount = DEF_MaxConcurrentRequestCount;
     }
     return self;
 }

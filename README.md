@@ -100,5 +100,10 @@ Implementation RMRequestDelegate or block to handle reponse
 
 ## License
 MIT
+<<<<<<< HEAD
 ## 更新说明
 修改HTTPMaximumConnectionsPerHost
+=======
+
+## add author
+>>>>>>> origin/master
