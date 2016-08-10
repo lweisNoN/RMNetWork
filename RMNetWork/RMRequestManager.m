@@ -201,6 +201,9 @@
         NSString *key = [self taskHashKey:request.task];
         @synchronized(self) {
             [self.requestQueue setValue:request forKey:key];
+            if (self.requestQueue.count > 0) {
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            }
         }
     }
 }
@@ -209,6 +212,9 @@
     NSString *key = [self taskHashKey:task];
     @synchronized(self) {
         [self.requestQueue removeObjectForKey:key];
+        if (self.requestQueue.count <= 0) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        }
     }
 }
 

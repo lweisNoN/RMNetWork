@@ -51,6 +51,8 @@
             default:
                 break;
         }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:RMNetWorkChangeNotification object:nil];
     }];
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+static NSString * const RMNetWorkChangeNotification = @"rm.networking.offline";
 
 @interface RMNetStatus : NSObject
 typedef NS_ENUM(NSInteger, RMNetworkReachabilityStatus) {
